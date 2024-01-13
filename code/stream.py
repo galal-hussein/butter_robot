@@ -3,8 +3,6 @@ import logging
 import socketserver
 from threading import Condition
 from http import server
-from butter import output
-
 
 view_dir = "view"
 

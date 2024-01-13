@@ -3,7 +3,6 @@ from gpiozero import AngularServo, Robot
 from gpiozero.pins.pigpio import PiGPIOFactory
 from stream import StreamingHandler, StreamingServer, output
 import picamera
-from http import server
 
 motor_1_a_pin = 19
 motor_1_b_pin = 26
@@ -22,7 +21,6 @@ robot = Robot(left=(motor_1_a_pin, motor_1_b_pin), right=(motor_2_a_pin, motor_2
 camera = picamera.PiCamera(resolution='640x480', framerate=24)
 
 def main():
-    
     camera.start_recording(output, format='mjpeg')
     try:
         address = ('', 8000)
