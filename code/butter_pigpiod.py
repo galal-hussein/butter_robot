@@ -6,8 +6,7 @@ from stream import StreamingHandler, StreamingServer, output
 import picamera
 
 def play_sound(text, amp, speed):
-    command = 'espeak -a ' + amp + ' -k20 -s ' + speed + ' "'+text+'" 2>/dev/null'
-    print(command)
+    command = 'espeak -a ' + str(amp) + ' -k20 -s ' + str(speed) + ' "'+text+'" 2>/dev/null'
     os.system(command)
 
 motor_1_a_pin = 13
