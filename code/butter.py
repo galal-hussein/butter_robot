@@ -1,16 +1,14 @@
+import os
 from time import sleep
 from gpiozero import AngularServo, Robot, LED
 from gpiozero.pins.pigpio import PiGPIOFactory
 from stream import StreamingHandler, StreamingServer, output
 import picamera
-import pygame
 
-def play_sound(filename):
-    pygame.mixer.init()
-    pygame.mixer.music.load(filename)
-    pygame.mixer.music.play()
-    while pygame.mixer.music.get_busy() == True:
-        continue
+def play_sound(text, amp, speed):
+    command = 'espeak -a ' + amp + '-k20 -s ' + speed + '"'+text+'"'
+    print(command)
+    os.system(command)
 
 motor_1_a_pin = 13
 motor_1_b_pin = 6
@@ -33,7 +31,7 @@ led = LED(led_pin)
 camera.start_recording(output, format='mjpeg')
 try:
     led.on()
-    play_sound('../sounds/ohmygod.wav')
+    play_sound("Oh My God!", 200, 125)
     led.off()
     address = ('', 8000)
     server = StreamingServer(address, StreamingHandler)
