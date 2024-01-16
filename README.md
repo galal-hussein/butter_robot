@@ -12,6 +12,7 @@ This project is a fork from https://hackaday.io/project/26038-butter-robot with 
 - L9110 motor driver
 - 2 DC geared motor
 - MAX98357 board
+- SPH0645 board
 - speaker 8 ohm
 - Microphone
 - 3S battery
@@ -23,5 +24,13 @@ This project is a fork from https://hackaday.io/project/26038-butter-robot with 
 ![1](/images/1.jpg "butter robot").
 
 ## [You Pass Butter!](https://youtube.com/shorts/OrolRqvEC_U?feature=share)
+
+I haven't integerated the SPH0645 board and the mic yet, the video is just a simulation and test for espeak
+
+## TODO
+
+- [ ] Add SPH0645 board to integerate the mic
+- [ ] Use a different power source for the servos
+- [ ] Use [Bard-API](https://github.com/dsdanielpark/Bard-API) for the code
 
 
